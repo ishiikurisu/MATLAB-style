@@ -62,7 +62,8 @@ emptyCell{end+1} = 19;
 General practices
 -----------------
 
-<!-- TODO Add practices -->
+- Whenever possible, try to use MATLAB's own math functions. And try to make your own functions comply with their functions. This will make your script a lot more faster. Seriously.
+- Make every function return something unless it is a procedure.
 
 Module organization
 -------------------
