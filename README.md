@@ -62,8 +62,10 @@ emptyCell{end+1} = 19;
 General practices
 -----------------
 
-- Whenever possible, try to use MATLAB's own math functions. And try to make your own functions comply with their functions. This will make your script a lot more faster. Seriously.
-- Make every function return something unless it is a procedure.
+- Write documentation before writing code. _Write documentation before writing code._ **Write documentation before writing code.**
+- State your functions' inputs and outputs when documenting it, specially the data types.
+- Whenever possible, try to use MATLAB's own math functions. And try to make your own functions comply with their functions. This will make your script a lot more faster and readable.
+- **Make every function return something unless it is a procedure.** 'What does it mean?', you might ask. Ask `why` for MATLAB and it will answer for you. Actually not. Procedures here can be understand as a series of transformations and steps to achieve a goal, while a function is the transformation itself. A procedure's goal is to cause a side-effect on your system, and this side-effect must be well documented and defined. A function's goal is to create another variable based on other variable's state. This distinction will make your programs less confusing to outsiders, even if they do not know it is there; specially when there are graphical user interfaces (GUIs for short) involved. For example: when you a press a button, it will usually cause a side-effect somewhere, like saving some data to a file or change something else on your GUI. This can be done by performing a procedure, creating and updating variables based on the system's current state. This distinction is subtle but turns everything clearer with practice. Seriously.
 
 Module organization
 -------------------
@@ -76,4 +78,4 @@ Regardless of language, we can define a module as a collection of code that trie
 One issue that I have come accross during this time working with this language is that there is considerable namespace pollution given MATLAB does not have any mechanisms to deal with it. Therefore some care is desired when work with them:
 
 - Unless the given module is always used, do not incorporate it directly to MATLAB. Instead, for each script, run the `addpath` function with the module path. This will keep the current namespace organized. The same applies to the Java classpath.
-- One thing to pay attention is that MATLAB does not add nested modules when a folder is inserted to its path. Therefore it might be a good idea to write a function to add the modules whithin for better incorporation.
+- One thing to pay attention is that MATLAB does not add nested modules when a folder is inserted to its path. Therefore it might be a good idea to write a function to add the modules whithin for better incorporation, unless you've got somethign to hide from everyone else.
