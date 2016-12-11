@@ -50,14 +50,38 @@ result = viscosity ...
 ```
 - Name variables and functions using camelCase, as it is Java after all.
 - Name constants using UPPERCASE_SEPARATED_BY_UNDERSCORES.
+- Always add a space near the equals sign.
 - Add spaces after and before brackets in case they define an array or a cell.
-This space is not needed when accessing data.
+This space is not needed when accessing data, calling a function or anything 
+like that:
 ``` matlab
+% defining cells or arrays:
 emptyCell = { };
 someNumbers = [ 1 1 2 3 5 8 13 42 ];
+
+% function call:
 someNumbers(5);
+someTrouble = ackermann(4, 2);
+
+% accessing data:
 emptyCell{end+1} = 19;
 ```
+- Add spaces between expressions to make them more readable in case they are 
+too long or full of text:
+``` matlab
+% expressions that needs space for readability:
+result = sqrt(x1^2 + y1^2) + sqrt(x2^2 + y2^2) + sqrt(x3^2 + y3^2);
+force = mass * acceleration;
+
+% expressions that does not need space for readability:
+z = i+1;
+f = m*a;
+```
+- Your code is mostly like a text, with sentences are paragraphs.
+Therefore it is a good idea to visually separate concerns within
+your code with empty lines so new-comers know these concerns.
+Sometimes, this separations of paragraphs is more useful than 
+documentation itself.
 
 General practices
 -----------------
